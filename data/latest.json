@@ -1,0 +1,714 @@
+{
+  "meta": {
+    "location": "Playa del Inglés",
+    "timezone": "Atlantic/Canary",
+    "generatedAt": "2026-09-06T09:54:27.856Z"
+  },
+  "days": [
+    {
+      "date": "2026-09-06",
+      "tides": [
+        {
+          "zeit": "03:17",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.68
+        },
+        {
+          "zeit": "09:46",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.55
+        },
+        {
+          "zeit": "16:24",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.53
+        },
+        {
+          "zeit": "22:42",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.49
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "tides": [
+        {
+          "zeit": "04:46",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.57
+        },
+        {
+          "zeit": "11:04",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.72
+        },
+        {
+          "zeit": "17:34",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.35
+        },
+        {
+          "zeit": "23:46",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.65
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "tides": [
+        {
+          "zeit": "05:46",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.41
+        },
+        {
+          "zeit": "12:00",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.92
+        },
+        {
+          "zeit": "18:25",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.17
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "tides": [
+        {
+          "zeit": "00:34",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.8
+        },
+        {
+          "zeit": "06:32",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.26
+        },
+        {
+          "zeit": "12:45",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.08
+        },
+        {
+          "zeit": "19:06",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.04
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "tides": [
+        {
+          "zeit": "01:15",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.93
+        },
+        {
+          "zeit": "07:12",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.14
+        },
+        {
+          "zeit": "13:25",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.2
+        },
+        {
+          "zeit": "19:44",
+          "typ": "Niedrigwasser",
+          "hoehe_m": -0.04
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "tides": [
+        {
+          "zeit": "01:52",
+          "typ": "Hochwasser",
+          "hoehe_m": 2
+        },
+        {
+          "zeit": "07:49",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.06
+        },
+        {
+          "zeit": "14:03",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.24
+        },
+        {
+          "zeit": "20:18",
+          "typ": "Niedrigwasser",
+          "hoehe_m": -0.06
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "tides": [
+        {
+          "zeit": "02:26",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.04
+        },
+        {
+          "zeit": "08:24",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.04
+        },
+        {
+          "zeit": "14:38",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.21
+        },
+        {
+          "zeit": "20:50",
+          "typ": "Niedrigwasser",
+          "hoehe_m": -0.02
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "tides": [
+        {
+          "zeit": "02:59",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.02
+        },
+        {
+          "zeit": "08:59",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.07
+        },
+        {
+          "zeit": "15:13",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.11
+        },
+        {
+          "zeit": "21:21",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.07
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "tides": [
+        {
+          "zeit": "03:31",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.96
+        },
+        {
+          "zeit": "09:32",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.14
+        },
+        {
+          "zeit": "15:46",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.97
+        },
+        {
+          "zeit": "21:51",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.2
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "tides": [
+        {
+          "zeit": "04:03",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.87
+        },
+        {
+          "zeit": "10:06",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.25
+        },
+        {
+          "zeit": "16:19",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.79
+        },
+        {
+          "zeit": "22:20",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.34
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "tides": [
+        {
+          "zeit": "04:35",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.74
+        },
+        {
+          "zeit": "10:41",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.39
+        },
+        {
+          "zeit": "16:54",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.6
+        },
+        {
+          "zeit": "22:52",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.5
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "tides": [
+        {
+          "zeit": "05:10",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.6
+        },
+        {
+          "zeit": "11:21",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.55
+        },
+        {
+          "zeit": "17:34",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.42
+        },
+        {
+          "zeit": "23:29",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.65
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "tides": [
+        {
+          "zeit": "05:55",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.45
+        },
+        {
+          "zeit": "12:15",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.71
+        },
+        {
+          "zeit": "18:33",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.26
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "tides": [
+        {
+          "zeit": "00:26",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.79
+        },
+        {
+          "zeit": "07:12",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.33
+        },
+        {
+          "zeit": "13:56",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.81
+        },
+        {
+          "zeit": "20:25",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.18
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "tides": [
+        {
+          "zeit": "02:24",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.86
+        },
+        {
+          "zeit": "09:13",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.33
+        },
+        {
+          "zeit": "16:06",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.77
+        },
+        {
+          "zeit": "22:18",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.25
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "tides": [
+        {
+          "zeit": "04:16",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.78
+        },
+        {
+          "zeit": "10:37",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.45
+        },
+        {
+          "zeit": "17:10",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.63
+        },
+        {
+          "zeit": "23:16",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.39
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "tides": [
+        {
+          "zeit": "05:12",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.65
+        },
+        {
+          "zeit": "11:26",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.61
+        },
+        {
+          "zeit": "17:49",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.48
+        },
+        {
+          "zeit": "23:54",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.55
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "tides": [
+        {
+          "zeit": "05:51",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.5
+        },
+        {
+          "zeit": "12:03",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.77
+        },
+        {
+          "zeit": "18:21",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.33
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "tides": [
+        {
+          "zeit": "00:27",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.7
+        },
+        {
+          "zeit": "06:24",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.36
+        },
+        {
+          "zeit": "12:35",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.92
+        },
+        {
+          "zeit": "18:51",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.19
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "tides": [
+        {
+          "zeit": "00:58",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.84
+        },
+        {
+          "zeit": "06:56",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.23
+        },
+        {
+          "zeit": "13:07",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.04
+        },
+        {
+          "zeit": "19:20",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.08
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "tides": [
+        {
+          "zeit": "01:29",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.95
+        },
+        {
+          "zeit": "07:27",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.13
+        },
+        {
+          "zeit": "13:38",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.12
+        },
+        {
+          "zeit": "19:51",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "tides": [
+        {
+          "zeit": "02:00",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.03
+        },
+        {
+          "zeit": "08:00",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.07
+        },
+        {
+          "zeit": "14:12",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.15
+        },
+        {
+          "zeit": "20:22",
+          "typ": "Niedrigwasser",
+          "hoehe_m": -0.03
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "tides": [
+        {
+          "zeit": "02:33",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.06
+        },
+        {
+          "zeit": "08:34",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.04
+        },
+        {
+          "zeit": "14:46",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.13
+        },
+        {
+          "zeit": "20:55",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "tides": [
+        {
+          "zeit": "03:07",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.05
+        },
+        {
+          "zeit": "09:11",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.06
+        },
+        {
+          "zeit": "15:24",
+          "typ": "Hochwasser",
+          "hoehe_m": 2.04
+        },
+        {
+          "zeit": "21:30",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.09
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "tides": [
+        {
+          "zeit": "03:44",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.98
+        },
+        {
+          "zeit": "09:50",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.14
+        },
+        {
+          "zeit": "16:05",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.9
+        },
+        {
+          "zeit": "22:09",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.22
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "tides": [
+        {
+          "zeit": "04:26",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.87
+        },
+        {
+          "zeit": "10:36",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.27
+        },
+        {
+          "zeit": "16:53",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.72
+        },
+        {
+          "zeit": "22:54",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.39
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "tides": [
+        {
+          "zeit": "05:16",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.73
+        },
+        {
+          "zeit": "11:33",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.42
+        },
+        {
+          "zeit": "17:54",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.53
+        },
+        {
+          "zeit": "23:52",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.57
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "tides": [
+        {
+          "zeit": "06:24",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.59
+        },
+        {
+          "zeit": "12:55",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.56
+        },
+        {
+          "zeit": "19:24",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.39
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "tides": [
+        {
+          "zeit": "01:22",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.7
+        },
+        {
+          "zeit": "08:01",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.53
+        },
+        {
+          "zeit": "14:49",
+          "typ": "Niedrigwasser",
+          "hoehe_m": 0.58
+        },
+        {
+          "zeit": "21:13",
+          "typ": "Hochwasser",
+          "hoehe_m": 1.39
+        }
+      ]
+    }
+  ]
+}
