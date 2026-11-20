@@ -1,0 +1,329 @@
+/* =========================================================
+   🌊 STYLE.CSS – Playa del Inglés · Tide + Webcam (V2.2)
+   ========================================================= */
+
+/* ===== Allgemeines Layout ===== */
+:root {
+  --card-max: 520px;
+  --gap-main: 1.2rem;
+  --btn-glow: rgba(68, 110, 243, 0.35);
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #e6f5ff 0%, #d9f0ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ===== Container ===== */
+.tide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: var(--gap-main);
+  flex-grow: 1;
+  padding: 1.5rem 0;
+}
+
+/* ===== Gezeiten-Karte ===== */
+.card {
+  background: white;
+  padding: 1.3rem 1.8rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: var(--card-max);
+  text-align: center;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0.2rem 0 0.3rem 0;
+}
+
+h2 {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.tide-icon {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.status {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.status.up { color: #2e7d32; }
+.status.down { color: #d32f2f; }
+
+.next {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.btn {
+  background: linear-gradient(180deg, #5b8df7, #446ef3);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  min-width: 95px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px var(--btn-glow), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 14px rgba(68, 110, 243, 0.5);
+}
+.btn.active {
+  background: linear-gradient(180deg, #315cf0, #284ce0);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Datum-Navigation ===== */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.nav-btn {
+  background: linear-gradient(180deg, #5b8df7, #446ef3);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--btn-glow), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+.nav-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 12px rgba(68, 110, 243, 0.5);
+}
+
+/* ===== Dropdown ===== */
+select {
+  font-family: "Inter", system-ui, sans-serif;
+  background: white;
+  border: 1px solid #cfd7e6;
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  min-width: 230px;
+  text-align: center;
+  appearance: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s;
+}
+select:focus {
+  outline: none;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.2);
+}
+
+/* ===== Tabelle ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  table-layout: fixed;
+  font-family: "Inter", system-ui, sans-serif; /* Einheitliche Schrift */
+}
+
+th, td {
+  width: 33%;
+  text-align: center;
+  font-weight: normal;
+}
+
+th {
+  color: #666;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.4rem 0;
+  font-variant-numeric: tabular-nums; /* saubere Zahlenbreite */
+  font-family: inherit; /* gleiche Schriftart wie der Rest */
+}
+
+tbody tr:nth-child(odd) { background-color: #f9fbff; }
+tr.low td { color: #d32f2f; font-weight: 600; }
+tr.high td { color: #2e7d32; font-weight: 600; }
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 0.6rem;
+  font-size: 0.68rem;
+  color: #777;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ===== Webcam ===== */
+.webcam {
+  flex: 1.6;
+  width: 100%;
+  max-width: 1024px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.webcam video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  object-fit: cover;
+}
+.webcam-link {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+.webcam-link a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.webcam-link a:hover { text-decoration: underline; }
+
+/* ===== Smartphone (bis 599px) ===== */
+@media (max-width: 599px) {
+  .card, .webcam {
+    width: 92%;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    margin-top: 0.3rem;
+    white-space: nowrap;
+  }
+
+  h2 { font-size: 0.85rem; margin-bottom: 0.9rem; }
+
+  .buttons { gap: 0.4rem; flex-wrap: nowrap; }
+
+  .btn {
+    min-width: 90px;
+    padding: 0.5rem 0.8rem;
+  }
+
+  footer { font-size: 0.68rem; }
+
+  .webcam video {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+/* ===== Tablet (600–899px) ===== */
+@media (min-width: 600px) and (max-width: 899px) {
+  .card, .webcam {
+    width: 94%;
+    max-width: 940px;
+    margin: 0 auto;
+  }
+  .card { margin-bottom: 0; }
+  .webcam video {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+  }
+}
+
+/* ===== Desktop (ab 900px) ===== */
+@media (min-width: 900px) {
+  body { padding-top: 1.5rem; }
+
+  .tide-container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0 2.5rem;
+  }
+
+  .card {
+    flex: 0 0 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+  .webcam {
+    flex: 1;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .webcam video {
+    flex-grow: 1;
+    height: 100%;
+    object-fit: cover;
+  }
+}

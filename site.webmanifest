@@ -1,0 +1,19 @@
+{
+  "name": "Gezeiten · Playa del Inglés",
+  "short_name": "Gezeiten",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#e6f5ff",
+  "display": "standalone"
+}
