@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gezeiten · Playa del Inglés 🌊</title>
+
+
+<!-- Favicons & Manifest -->
+<link rel="icon" href="https://happiestmanrob.github.io/tide-playa/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="https://happiestmanrob.github.io/tide-playa/apple-touch-icon.png">
+<link rel="manifest" href="https://happiestmanrob.github.io/tide-playa/site.webmanifest">
+<meta name="theme-color" content="#e6f5ff">
+  
+
+
+  
+  <!-- Schriftarten -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Externe CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="tide-container">
+    <!-- Gezeitenkarte -->
+    <div class="card tide-table">
+      <h1>Gezeiten · Playa del Inglés 🌊</h1>
+      <h2 id="date-display">–</h2>
+
+      <div class="tide-icon" id="tide-icon">⬆️</div>
+      <div class="status" id="tide-status">Das Wasser steigt</div>
+      <div class="next" id="next-high">nächstes Hochwasser um –:– Uhr</div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button id="btn-today" class="btn active">Heute</button>
+        <button id="btn-tomorrow" class="btn">Morgen</button>
+        <button id="btn-after" class="btn">Übermorgen</button>
+      </div>
+
+      <!-- Datumsauswahl -->
+      <div class="date-nav">
+        <button id="btn-prev" class="nav-btn">‹</button>
+        <select id="date-select"></select>
+        <button id="btn-next" class="nav-btn">›</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Zeit</th>
+            <th>Typ</th>
+            <th>Höhe</th>
+          </tr>
+        </thead>
+        <tbody id="tide-table"></tbody>
+      </table>
+
+      <footer id="footer-text">
+        Quelle: tide-forecast.com <span>·</span> Aktualisiert: –
+      </footer>
+    </div>
+
+    <!-- Webcam -->
+    <div class="webcam">
+      <video id="liveCam" 
+             controls 
+             muted 
+             playsinline 
+             preload="auto"
+             style="border-radius:20px; width:100%; max-width:1200px; background:#000; box-shadow:0 8px 25px rgba(0,0,0,0.18);">
+      </video>
+
+      <div class="webcam-link">
+        🌴 <a href="https://in2thebeach.es/webcam/13/playa-del-ingles-curva/" 
+              target="_blank" rel="noopener noreferrer">
+          Webcam: Playa del Inglés – Curva
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HLS Player -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+  const video = document.getElementById('liveCam');
+  const streamUrl = "https://richtigerleben.de/proxy.php?url=https://camserver2.in2thebeach.es/streams/mozart2/index.m3u8";
+
+  function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  }
+
+  if (isSafari() && video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = streamUrl;
+    video.addEventListener('loadedmetadata', () => video.play());
+  } else if (Hls.isSupported()) {
+    const hls = new Hls({ liveDurationInfinity: true });
+    hls.loadSource(streamUrl);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      video.play().catch(() => console.log('Autoplay blockiert – bitte manuell starten.'));
+    });
+  } else {
+    video.outerHTML = '<p>⚠️ Dein Browser unterstützt diesen Livestream leider nicht.</p>';
+  }
+  </script>
+
+  <!-- Gezeitenlogik -->
+  <script>
+    let activeIndex = 0;
+
+    async function loadTideData() {
+      try {
+        const basePath = window.location.pathname.replace(/\/$/, "");
+        const response = await fetch(`${basePath}/data/latest.json`);
+        if (!response.ok) throw new Error("Fehler beim Laden der JSON-Datei.");
+        const data = await response.json();
+        if (!data.days?.length) throw new Error("Keine Daten gefunden.");
+        window.tideData = data.days;
+        const todayIndex = findTodayIndex(data.days);
+        populateDateSelect(data.days);
+        showDay(todayIndex);
+      } catch (err) {
+        document.getElementById("tide-table").innerHTML =
+          `<tr><td colspan="3" class="error">❌ ${err.message}</td></tr>`;
+      }
+    }
+
+    function findTodayIndex(days) {
+      const todayStr = new Date().toISOString().split("T")[0];
+      const index = days.findIndex((d) => d.date === todayStr);
+      return index >= 0 ? index : 0;
+    }
+
+    function populateDateSelect(days) {
+      const select = document.getElementById("date-select");
+      select.innerHTML = "";
+      days.forEach((d) => {
+        const dateObj = new Date(d.date);
+        const option = document.createElement("option");
+        option.value = d.date;
+        option.textContent = dateObj.toLocaleDateString("de-DE", {
+          weekday: "long",
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        });
+        select.appendChild(option);
+      });
+      select.addEventListener("change", () => {
+        const index = days.findIndex((d) => d.date === select.value);
+        if (index !== -1) showDay(index);
+      });
+    }
+
+    function formatTime(t) {
+      const [h, m] = t.split(":").map(Number);
+      return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+    }
+
+    function showDay(index) {
+      activeIndex = index;
+      updateButtons();
+
+      const day = window.tideData[index];
+      const dateObj = new Date(day.date);
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+
+      document.getElementById("date-display").textContent =
+        dateObj.toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long", year: "numeric" }) +
+        `, ${timeStr} Uhr`;
+
+      document.getElementById("date-select").value = day.date;
+
+      const tbody = document.getElementById("tide-table");
+      tbody.innerHTML = "";
+
+      // 🔹 1:1 Anzeige aus JSON — unterstützt Minus und 0.00 korrekt
+      day.tides.forEach((t) => {
+        const typ = t.typ.trim();
+        const hoehe =
+          t.hoehe_m === 0
+            ? "0.00"
+            : (t.hoehe_m || 0).toFixed(2).replace("-", "−");
+
+        const tr = document.createElement("tr");
+        tr.classList.add(typ === "Niedrigwasser" ? "low" : "high");
+        tr.innerHTML = `
+          <td>${formatTime(t.zeit)}</td>
+          <td>${typ}</td>
+          <td>${hoehe} m</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      updateStatus(day);
+    }
+
+    function updateButtons() {
+      const todayIndex = findTodayIndex(window.tideData);
+      document.getElementById("btn-today").classList.toggle("active", activeIndex === todayIndex);
+      document.getElementById("btn-tomorrow").classList.toggle("active", activeIndex === todayIndex + 1);
+      document.getElementById("btn-after").classList.toggle("active", activeIndex === todayIndex + 2);
+    }
+
+    function updateStatus(day) {
+      const now = new Date();
+      const nowMinutes = now.getHours() * 60 + now.getMinutes();
+      const todayISO = new Date().toISOString().split("T")[0];
+      const selectedDateISO = day.date;
+      const allDays = window.tideData;
+      const idx = allDays.findIndex((d) => d.date === selectedDateISO);
+
+      const toMinutes = (t) => {
+        const [h, m] = t.split(":").map(Number);
+        return h * 60 + m;
+      };
+
+      let lastTide = null;
+      let nextTide = null;
+      for (const tide of day.tides) {
+        const mins = toMinutes(tide.zeit);
+        if (mins <= nowMinutes) lastTide = tide;
+        if (mins > nowMinutes && !nextTide) nextTide = tide;
+      }
+      if (!nextTide && allDays[idx + 1]) nextTide = allDays[idx + 1].tides[0];
+
+      const sameDay = todayISO === selectedDateISO;
+      const trendUp = nextTide?.typ === "Hochwasser";
+      const trendText = sameDay
+        ? (trendUp ? "Das Wasser steigt gerade" : "Das Wasser fällt gerade")
+        : (trendUp ? "Das Wasser steigt dann" : "Das Wasser fällt dann");
+
+      document.getElementById("tide-status").textContent = trendText;
+      document.getElementById("tide-status").className = trendUp ? "status up" : "status down";
+      document.getElementById("tide-icon").textContent = trendUp ? "⬆️" : "⬇️";
+
+      if (nextTide) {
+        document.getElementById("next-high").textContent =
+          `nächstes ${nextTide.typ} um ${formatTime(nextTide.zeit)} Uhr`;
+      }
+
+      const updated = new Date().toLocaleString("de-DE", {
+        timeZone: "Atlantic/Canary",
+        hour: "2-digit",
+        minute: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+      document.getElementById("footer-text").innerHTML =
+        `Quelle: tide-forecast.com <span>·</span> Aktualisiert: ${updated} WET`;
+    }
+
+    function stepDay(delta) {
+      const select = document.getElementById("date-select");
+      const days = window.tideData;
+      const idx = days.findIndex(d => d.date === select.value);
+      const next = Math.min(Math.max(idx + delta, 0), days.length - 1);
+      showDay(next);
+    }
+
+    document.getElementById("btn-prev").addEventListener("click", () => stepDay(-1));
+    document.getElementById("btn-next").addEventListener("click", () => stepDay(1));
+
+    document.getElementById("btn-today").onclick    = () => showDay(findTodayIndex(window.tideData));
+    document.getElementById("btn-tomorrow").onclick = () => showDay(findTodayIndex(window.tideData) + 1);
+    document.getElementById("btn-after").onclick    = () => showDay(findTodayIndex(window.tideData) + 2);
+
+    loadTideData();
+  </script>
+</body>
+</html>
